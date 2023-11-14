@@ -4,6 +4,7 @@ import sys
 import asyncio
 import base64
 import httpx
+import requests
 from typing import Any
 
 
@@ -25,7 +26,7 @@ class HTTPClient:
             ),
         }
         self.request_id = 0
-        self.client = httpx.Client()
+        self.client = requests.Session()
 
     def send(self, data: dict[str, Any]) -> RPCResponse:
         res = self.client.post(
@@ -51,7 +52,7 @@ class HTTPClient:
     def refresh(self) -> None:
         self.client.close()
         self.request_id = 0
-        self.client = httpx.Client()
+        self.client = requests.Client()
 
 
 class AsyncHTTPClient:
