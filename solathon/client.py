@@ -10,6 +10,7 @@ ENDPOINTS = (
     "https://api.mainnet-beta.solana.com",
     "https://api.devnet.solana.com",
     "https://api.testnet.solana.com",
+    "https://nd-353-726-121.p2pify.com/529c01ed63bb2230a3f78459df731839"
 )
 
 
